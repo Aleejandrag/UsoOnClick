@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="240dp"
@@ -14,29 +15,32 @@
         android:layout_marginTop="40dp"
         android:text="Ejemplo de uso de OnClick"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/ivImagenLogo"
+        android:layout_width="205dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:mipmap/sym_def_app_icon" />
+
     <Switch
         android:id="@+id/SwCambiarModo"
         android:layout_width="162dp"
         android:layout_height="32dp"
         android:layout_marginTop="20dp"
         android:text="Cambiar modo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintTop_toBottomOf="@id/ivImagenLogo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivImagenLogo"/>
-    <ImageView
-        android:id="@+id/ivImagenLogo"
-        android:layout_width="205dp"
-        android:layout_height="157dp"
-        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
-        app:srcCompat="@android:mipmap/sym_def_app_icon" />
+        app:layout_constraintHorizontal_bias="0.5" />
+
     <EditText
         android:id="@+id/edtEstadoModo"
         android:layout_width="276dp"
@@ -47,9 +51,72 @@
         android:textAlignment="center"
         android:textSize="14sp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SwCambiarModo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SwCambiarModo" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/chboxDesactivacambiomodo"
+        android:layout_width="259dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="Desahabilitar cambiar modo"
+        app:layout_constraintTop_toBottomOf="@id/edtEstadoModo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="201dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintTop_toBottomOf="@id/chboxDesactivacambiomodo"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbMostrarLista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Mostrar imagen" />
+
+        <RadioButton
+            android:id="@+id/radbtnOcultarLista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ocultar imagen" />
+    </RadioGroup>
+
+    <ListView
+        android:id="@+id/lstDepartamentos"
+        android:layout_width="261dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="46dp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgButtonFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintTop_toBottomOf="@id/edtEstadoModo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_today" />
+
+    <ImageButton
+        android:id="@+id/imgButtonHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintTop_toBottomOf="@id/imgButtonFecha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_recent_history" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
@@ -60,41 +127,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_add" />
-    <CheckBox
-        android:id="@+id/chboxDesactivacambiomodo"
-        android:layout_width="259dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:text="Desahabilitar cambiar modo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEstadoModo" />
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="201dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="26dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chboxDesactivacambiomodo">
-        <RadioButton
-            android:id="@+id/rbMostrarLista"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Mostrar imagen" />
-        <RadioButton
-            android:id="@+id/radbtnOcultarLista"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ocultar imagen" />
-    </RadioGroup>
-    <ListView
-        android:id="@+id/lstDepartamentos"
-        android:layout_width="261dp"
-        android:layout_height="118dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="46dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
